@@ -15,8 +15,8 @@ documents = [(list(movie_reviews.words(fileid)), category)
              for fileid in movie_reviews.fileids(category)]
 
 # Let's see one of them, randomly
-random.shuffle(documents)
-print documents[1]
+# random.shuffle(documents)
+# print documents[1]
 
 # Create a Frequency Distribution of these words
 all_words = nltk.FreqDist([w.lower() for w in movie_reviews.words()])
@@ -42,3 +42,18 @@ featuresets = [(find_features(rev), category) for (rev, category) in documents]
 
 
 # NAIVE BAYES Classifier
+
+# set the training set, the first half of data of featuresets
+training_set = featuresets[:1900]
+testing_set = featuresets[1900:]
+
+# Define, and train, our classifier:
+classifier = nltk.NaiveBayesClassifier.train(training_set)
+
+# What is the accuracy level?
+print "Classifier accuracy: ",
+print nltk.classify.accuracy(classifier, testing_set) * 100,
+print " percent."
+
+# This will show the most common words for positive and negatives
+# print classifier.show_most_informative_features(15)
