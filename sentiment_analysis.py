@@ -1,4 +1,4 @@
-# TEXT CLASSIFICATION
+"""Text Classification."""
 
 # Make out whether we are in front of a politics or military text,
 # or the gender of the author. Spam or not spam, for instance.
@@ -30,6 +30,7 @@ word_features = list(all_words.keys())[:3000]  # top 3000 most common words
 
 
 def find_features(document):
+    """Find features."""
     words = set(document)
     features = {}
     for w in word_features:
@@ -145,18 +146,25 @@ class VoteClassifier(ClassifierI):
 
 
 # Now let's put it all together
-voted_classifier = VoteClassifier(classifier,
-                                  NuSVC_classifier,
-								  LinearSVC_classifier,
-								  SGDClassifier_classifier,
-								  MNB_classifier,
-								  BernoulliNB_classifier,
-								  LogisticRegression_classifier)
+# voted_classifier = VoteClassifier(classifier,
+#                                   NuSVC_classifier,
+# 								  LinearSVC_classifier,
+# 								  SGDClassifier_classifier,
+# 								  MNB_classifier,
+# 								  BernoulliNB_classifier,
+# 								  LogisticRegression_classifier)
 
-print("voted_classifier accuracy percent:", (nltk.classify.accuracy(voted_classifier, testing_set))*100)
-print("Classification:", voted_classifier.classify(testing_set[0][0]), "Confidence %:",voted_classifier.confidence(testing_set[0][0])*100)
-print("Classification:", voted_classifier.classify(testing_set[1][0]), "Confidence %:",voted_classifier.confidence(testing_set[1][0])*100)
-print("Classification:", voted_classifier.classify(testing_set[2][0]), "Confidence %:",voted_classifier.confidence(testing_set[2][0])*100)
-print("Classification:", voted_classifier.classify(testing_set[3][0]), "Confidence %:",voted_classifier.confidence(testing_set[3][0])*100)
-print("Classification:", voted_classifier.classify(testing_set[4][0]), "Confidence %:",voted_classifier.confidence(testing_set[4][0])*100)
-print("Classification:", voted_classifier.classify(testing_set[5][0]), "Confidence %:",voted_classifier.confidence(testing_set[5][0])*100)
+# print("voted_classifier accuracy percent:",
+# print nltk.classify.accuracy(voted_classifier, testing_set) * 100
+# print("Classification:", voted_classifier.classify(testing_set[0][0]),
+# print "Confidence %:", voted_classifier.confidence(testing_set[0][0]) * 100
+# print("Classification:", voted_classifier.classify(testing_set[1][0]),
+# print "Confidence %:", voted_classifier.confidence(testing_set[1][0]) * 100
+# print("Classification:", voted_classifier.classify(testing_set[2][0]),
+# print "Confidence %:", voted_classifier.confidence(testing_set[2][0]) * 100
+# print("Classification:", voted_classifier.classify(testing_set[3][0]),
+# print "Confidence %:", voted_classifier.confidence(testing_set[3][0]) * 100
+# print("Classification:", voted_classifier.classify(testing_set[4][0]),
+# print "Confidence %:", voted_classifier.confidence(testing_set[4][0]) * 100
+# print("Classification:", voted_classifier.classify(testing_set[5][0]),
+# print "Confidence %:",voted_classifier.confidence(testing_set[5][0]) * 100
