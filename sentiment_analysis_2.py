@@ -1,3 +1,4 @@
+"""Second sentiment analysis with a text database."""
 import nltk
 import random
 from nltk.corpus import movie_reviews
@@ -85,46 +86,3 @@ random.shuffle(featuresets)
 # data example:
 training_set = featuresets[:10000]
 testing_set = featuresets[10000:]
-
-#
-# classifier = nltk.NaiveBayesClassifier.train(training_set)
-# print("Original Naive Bayes Algo accuracy percent:", (nltk.classify.accuracy(classifier, testing_set))*100)
-# classifier.show_most_informative_features(15)
-#
-# MNB_classifier = SklearnClassifier(MultinomialNB())
-# MNB_classifier.train(training_set)
-# print("MNB_classifier accuracy percent:", (nltk.classify.accuracy(MNB_classifier, testing_set))*100)
-#
-# BernoulliNB_classifier = SklearnClassifier(BernoulliNB())
-# BernoulliNB_classifier.train(training_set)
-# print("BernoulliNB_classifier accuracy percent:", (nltk.classify.accuracy(BernoulliNB_classifier, testing_set))*100)
-#
-# LogisticRegression_classifier = SklearnClassifier(LogisticRegression())
-# LogisticRegression_classifier.train(training_set)
-# print("LogisticRegression_classifier accuracy percent:", (nltk.classify.accuracy(LogisticRegression_classifier, testing_set))*100)
-#
-# SGDClassifier_classifier = SklearnClassifier(SGDClassifier())
-# SGDClassifier_classifier.train(training_set)
-# print("SGDClassifier_classifier accuracy percent:", (nltk.classify.accuracy(SGDClassifier_classifier, testing_set))*100)
-#
-# ##SVC_classifier = SklearnClassifier(SVC())
-# ##SVC_classifier.train(training_set)
-# ##print("SVC_classifier accuracy percent:", (nltk.classify.accuracy(SVC_classifier, testing_set))*100)
-#
-# LinearSVC_classifier = SklearnClassifier(LinearSVC())
-# LinearSVC_classifier.train(training_set)
-# print("LinearSVC_classifier accuracy percent:", (nltk.classify.accuracy(LinearSVC_classifier, testing_set))*100)
-#
-# NuSVC_classifier = SklearnClassifier(NuSVC())
-# NuSVC_classifier.train(training_set)
-# print("NuSVC_classifier accuracy percent:", (nltk.classify.accuracy(NuSVC_classifier, testing_set))*100)
-#
-#
-# voted_classifier = VoteClassifier(
-#                                   NuSVC_classifier,
-#                                   LinearSVC_classifier,
-#                                   MNB_classifier,
-#                                   BernoulliNB_classifier,
-#                                   LogisticRegression_classifier)
-#
-# print("voted_classifier accuracy percent:", (nltk.classify.accuracy(voted_classifier, testing_set))*100)
