@@ -78,6 +78,7 @@ def find_features(document):
 
     return features
 
+
 featuresets = [(find_features(rev), category) for (rev, category) in documents]
 random.shuffle(featuresets)
 
