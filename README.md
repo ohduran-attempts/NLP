@@ -1,6 +1,7 @@
 # NLP
 ## Description
-An application of Naive Bayes classifier to identify sets of words that infer positive or negative sentiment about a certain topic. Utilise the movie review corpus of documents from NLTK library, and applied ML using Python and Scikit-learn.
+Using the Twitter streaming API, we applied Natural Language Processing and Machine Learning to create a sentiment analysis module based on tweets.
+
 
 ## Steps taken
 1. Naive Bayes Classifier
