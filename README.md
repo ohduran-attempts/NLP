@@ -1,6 +1,6 @@
 # NLP
 ## Description
-Using the Twitter streaming API, we applied Natural Language Processing and Machine Learning to create a sentiment analysis module based on tweets.
+Using the Twitter streaming API, applied Natural Language Processing and Machine Learning to create a sentiment analysis module based on tweets.
 
 
 ## Steps taken
